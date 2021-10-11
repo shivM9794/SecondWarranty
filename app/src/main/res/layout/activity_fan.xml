@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    tools:context=".Dashboard.FanActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/layoutToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:paddingEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/back_arrow1"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_weight="10"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/txt_fan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="75"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Fan"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fan_banner_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/fan_banner_img"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardCornerRadius="18dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/fan_banner_img"-->
+<!--            app:strokeColor="#e7e7e7"-->
+<!--            app:strokeWidth="1dp"-->
+<!--            tools:layout_editor_absoluteX="0dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioGroup-->
+<!--                    android:id="@+id/radio_grp1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/radio_btn1"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:paddingStart="12dp"-->
+<!--                        android:shadowColor="@color/yellow"-->
+<!--                        android:text="Repair  (Minimum Charge ₹ 554)" />-->
+
+
+<!--                </RadioGroup>-->
+
+
+<!--            </LinearLayout>-->
+
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="250dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:backgroundTint="#f9f9f9"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardCornerRadius="18dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/materialCardView"-->
+<!--            app:strokeColor="#e7e7e7"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/repair_range_txt"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Repair Range Estimation"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_not_working"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan not working - Rs 100 - Rs 350"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_speed_low"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan Speed is Low - Rs 50 - Rs 100"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <View-->
+<!--                    android:id="@+id/view_fan"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@color/colorRemaining" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Disclaimer"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer_txt"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:text="@string/disclaimer_txt" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardCornerRadius="18dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/materialCardView2"-->
+<!--            app:strokeColor="#e7e7e7"-->
+<!--            app:strokeWidth="1dp"-->
+<!--            tools:layout_editor_absoluteX="25dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linear1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioGroup-->
+<!--                    android:id="@+id/radio_grp2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/radio_btn2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:paddingStart="12dp"-->
+<!--                        android:text="Install  (Minimum Charge ₹ 554)" />-->
+
+
+<!--                </RadioGroup>-->
+
+
+<!--            </LinearLayout>-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView5"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="250dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:backgroundTint="#f9f9f9"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardCornerRadius="18dp"-->
+<!--            app:strokeColor="#e7e7e7"-->
+<!--            app:strokeWidth="1dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/materialCardView3"-->
+<!--            tools:layout_editor_absoluteX="0dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/repair_range_txt1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Repair Range Estimation"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_not_working1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan not working - Rs 100 - Rs 350"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_speed_low1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan Speed is Low - Rs 50 - Rs 100"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <View-->
+<!--                    android:id="@+id/view_fan1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@color/colorRemaining" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Disclaimer"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer_txt1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:text="@string/disclaimer_txt" />-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView4"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+<!--            app:cardCornerRadius="18dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/materialCardView5"-->
+<!--            app:strokeColor="#e7e7e7"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioGroup-->
+<!--                    android:id="@+id/radio_grp3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <RadioButton-->
+<!--                        android:id="@+id/radio_btn3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:paddingStart="12dp"-->
+<!--                        android:text="Uninstall  (Minimum Charge ₹ 554)" />-->
+
+<!--                </RadioGroup>-->
+
+
+<!--            </LinearLayout>-->
+
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/materialCardView6"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:backgroundTint="#f9f9f9"-->
+<!--            android:theme="@style/Theme.MaterialComponents.Light"-->
+
+<!--            app:cardCornerRadius="18dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/materialCardView4"-->
+<!--            app:strokeColor="#D3D3D3"-->
+<!--            app:strokeWidth="1dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/repair_range_txt2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Repair Range Estimation"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_not_working2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan not working - Rs 100 - Rs 350"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/fan_speed_low2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:text="Fan Speed is Low - Rs 50 - Rs 100"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:drawableStartCompat="@drawable/ic_circle" />-->
+
+<!--                <View-->
+<!--                    android:id="@+id/view_fan2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@color/colorRemaining" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:fontFamily="@font/open_sans_semibold"-->
+<!--                    android:text="Disclaimer"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/disclaimer_txt2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:text="@string/disclaimer_txt" />-->
+
+
+<!--            </LinearLayout>-->
+
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+        <Button
+            android:id="@+id/add_to_cart"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/add_to_cart_bg"
+            android:text="Add To Cart"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rec_service"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_proceed"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_bg"
+            android:text="Proceed"
+            android:onClick="proceedBtn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/add_to_cart"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+</ScrollView>
+
+
+
+
